@@ -18,8 +18,8 @@ export const calculateResult = (input) => {
         return "Error";
       }
     }
-
-    const result = eval(input);
+    const cleanedInput = input.replace(/\b0+(\d)/g, "$1");
+    const result = eval(cleanedInput);
     return result.toString();
   } catch (error) {
     return "Error";
